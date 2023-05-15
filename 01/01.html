@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    const Movie = (props) => {
+        return (
+            <div className="movie neon-purple">
+                <img src={props.link} alt="img" />
+                <h1>{props.name}</h1>
+                <p>Year: {props.year}</p>
+            </div>
+        );
+    };
+
+    const Title = () => {
+        return (
+            <div className="title">
+                <h2>Denis Villeneuve's films</h2>
+                <h2>Denis Villeneuve's films</h2>
+                <h2>Denis Villeneuve's films</h2>
+            </div>
+        );
+    };
+
+    const films = (
+        <div>
+            <Title />
+            <Movie name="Blade Runner 2049" year={2017} link="https://cdn.shopify.com/s/files/1/0830/9575/products/blade-runner-2049-matt-ferguson-editions-poster_2048x.jpg?v=1666719656"/>
+            <Movie name="Dune" year={2021} link="https://myhotposters.com/cdn/shop/products/mL5694_1024x1024.jpg?v=1633537441"/>
+            <Movie name="Arrival" year={2016} link="https://pbs.twimg.com/media/C9Uyrt1W0AE8rjD.jpg"/>
+        </div>
+    );
+
+    const root = document.getElementById('root');
+    ReactDOM.createRoot(root).render(films);
+</script>
+</body>
+</html>

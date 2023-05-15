@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+    const Nav = (props) => {
+        return (
+                    <ul>
+                        <li><a href="#"><i className={props.name}></i>{props.title}</a></li>
+                    </ul>
+        );
+    };
+
+    const Logo = () => {
+        return (
+            <div>
+                <img src="logo.svg" />
+                <h2>Meow!</h2>
+            </div>
+        );
+    };
+
+    const Header = () => {
+        return (
+            <div className="main_content">
+                <div className="header">
+                    <div className="title">Gallery</div>
+                    <div className="search">
+                        <input type="text" placeholder="Search!" />
+                        <button><i class="fas fa-solid fa-paw fa-sm"></i></button>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+    const Text = () => {
+        return (
+            <div className="text">
+                <h1 className="title-text">LOREM IPSUM</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took 
+                    a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+        );
+    };
+
+    const Content = (props) => {
+        return (
+            <div className={props.name}>
+                <img className="pic" src={props.link} alt="img" />
+            </div>
+        );
+    };
+
+    const Footer = () => {
+        return (
+            <div className="footer">
+                <span>Copyright © 2023 All Rights Reserved</span>
+            </div>
+        );
+    };
+
+    const base = (
+        <div>
+            <div className="sidebar">
+                <Logo />
+                <Nav name="fas fa-solid fa-paw fa-2xs" title="Home"/>
+                <Nav name="fas fa-duotone fa-cat fa-2xs" title="Gallery"/>
+                <Nav name="fas fa-solid fa-rss" title="Blogs"/>
+                <Nav name="fas fa-address-book" title="Contact"/>
+                <Nav name="fas fa-map-pin" title="Map"/>
+            </div>
+            <Header />
+            <div className="container">
+                <Text />
+                <div className="row">
+                    <Content name="cont content" link="img1.jpg"/>
+                    <Content name="cont content" link="img2.jpg"/>
+                    <Content name="cont content" link="img3.jpg"/>
+                    <Content name="cont content" link="img4.jpeg"/>
+                    <Content name="cont content" link="img5.jpg"/>
+                    <Content name="cont content" link="img6.jpeg"/>
+                    <Content name="cont content" link="img7.jpg"/>
+                    <Content name="cont content" link="img8.jpg"/>
+                </div>
+                <Footer />
+            </div>
+        </div>
+    );
+
+    const root = document.getElementById('root');
+    ReactDOM.createRoot(root).render(base);
+</script>
+</body>
+</html>
